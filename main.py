@@ -22,7 +22,7 @@ json_data = {
  
 @app.get('/')
 def index():
-    return "Hi there, you're on the main page. Please select a subdomain"
+    return "Hi there, you're on the main page. Please select a subdomain, or don't. Boeit niet"
  
 
 @app.get('/bim')
@@ -35,6 +35,8 @@ def index():
     return {'BIM Aanmeldingen':aanmeldingen, 'Procentueel':f'{int(aanmeldingen/245 * 100)} %'} 
  
  
+ 
+
  
  
 # Ik was bij 1:22 
