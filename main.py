@@ -42,7 +42,7 @@ def fibonacci_of(n):
 @app.get('/fib/{k}')
 def fibo(k):
     k = int(k)
-    return {'data':[fibonacci_of(n) for n in range(k)]}
+    return [fibonacci_of(n) for n in range(k)]
      
  
 
