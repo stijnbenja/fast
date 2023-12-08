@@ -36,6 +36,14 @@ def index():
  
  
  
+def fibonacci_of(n):
+    return n if n in {0, 1} else fibonacci_of(n - 1) + fibonacci_of(n - 2)
+ 
+@app.get('/fib/{k}')
+def fibo(k):
+    return [fibonacci_of(n) for n in range(k)]
+     
+ 
 
  
  
