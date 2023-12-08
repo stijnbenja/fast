@@ -22,12 +22,20 @@ json_data = {
  
 @app.get('/')
 def index():
+    return "Hi there, you're on the main page. Please select a subdomain"
+ 
+
+@app.get('/bim')
+def index():
     response = requests.post('https://www.rsm.nl/', params=params, json=json_data)
     soup = BeautifulSoup(response.json()['content'])
     aanmeldingen = int([x.text for x in soup.find_all("li") if 'Current number of applications' in x.text][0].split(': ')[1]) 
     
     
-    return {'BIM Aanmeldingen':aanmeldingen, 'Procentueel':f'{int(aanmeldingen/245 * 100)} %'}
+    return {'BIM Aanmeldingen':aanmeldingen, 'Procentueel':f'{int(aanmeldingen/245 * 100)} %'} 
+ 
+ 
+ 
  
 # Ik was bij 1:22 
 
