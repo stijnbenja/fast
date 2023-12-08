@@ -2,12 +2,11 @@ from fastapi import FastAPI
 import schemas
 import requests
 from bs4 import BeautifulSoup
+from mangum import Mangum
 
 app = FastAPI()
 
-
-
-
+handler = Mangum(app)
 
 params = {
     'eID': 'rsm_personal_programme_requirements_search',
